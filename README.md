@@ -3,6 +3,7 @@
 * Parcel
 * es-lint (airbnb config)
 * react, react-dom
+* prop-types
 * sass
 * editorconfig (may need a [plugin](https://editorconfig.org/))
 
