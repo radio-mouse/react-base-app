@@ -1,7 +1,6 @@
 # React Bundle for fast developing
 ## Includes
 * Parcel
-* npm-run-all
 * es-lint (airbnb config)
 * react, react-dom
 * sass
