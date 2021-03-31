@@ -1,0 +1,84 @@
+@mixin flex($justify: center, $align: center, $direction: row, $wrap: nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+@mixin size($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+}
+
+@mixin reset-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+@mixin bg($position: center, $size: cover, $repeat: no-repeat) {
+    background-position: $position;
+    background-size: $size;
+    background-repeat: $repeat;
+}
+
+@mixin layer($position: absolute, $top: 0, $left: 0, $opacity: .3, $bgc: #222, $z: 10) {
+    @include size();
+    position: $position;
+    top: $top;
+    left: $left;
+    opacity: $opacity;
+    background-color: $bgc;
+    z-index: $z;
+}
+
+@mixin grid-list($c-gap: 10px, $r-gap: 10px, $min: 320px, $max: 1fr, $break: 320px) {
+	display: grid;
+    column-gap: $c-gap;
+    row-gap: $r-gap;
+	grid-template-columns: repeat(auto-fill, minmax($min, $max));
+
+	@media screen and (max-width: $break) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, $max));
+	}
+}
+
+@mixin wrap() {
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1170px) {
+        max-width: 956px;
+    }
+
+    @media screen and (max-width: 986px) {
+        max-width: 740px;
+    }
+
+    @media screen and (max-width: 780px) {
+        max-width: calc(100% - 30px);
+    }
+}
+
+@mixin popup($bg: #000000ad, $z: 20) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bg;
+    z-index: $z;
+    transition: .3s all ease-out;
+}
+
+@mixin transition($t: .15s, $p: all, $f: ease-out) {
+    transition: $t $p $f;
+}
+
+@mixin font($s: 16px, $w: 400, $h:24px, $c: #000) {
+    font-size: $s;
+    font-weight: $w;
+    line-height: $h;
+    color: $c;
+}
